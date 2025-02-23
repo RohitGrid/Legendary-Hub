@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robin Sparkles Video Quiz</title>
+    <link rel="stylesheet" href="styles-sparkles.css" />
+  </head>
+  <body>
+    <button class="back-button" onclick="window.location.href='home.html'">&#8592; Back</button>
+
+    <div class="container">
+      <video id="video1" controls>
+        <source
+          src="Untitled video - Made with Clipchamp.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div id="quiz" class="hidden">
+        <h2>What do you think she did?</h2>
+        <button onclick="handleAnswer(1)">(i) She made an adult film</button>
+        <button onclick="handleAnswer(2)">(ii) She made a music video</button>
+        <button onclick="handleAnswer(3)">(iii) She studied well</button>
+        <button onclick="handleAnswer(4)">
+          (iv) She dropped off and started acting for a sit-com
+        </button>
+      </div>
+      <div id="rainbow-text" class="rainbow-text hidden">
+        Introducing Robin Sparkles
+      </div>
+      <video id="video2" class="hidden" controls>
+        <source
+          src="Robin Sparkles Karaoke Video - Made with Clipchamp.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <script src="script-sparkles.js"></script>
+  </body>
+</html>

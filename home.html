@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Met Your Mother - Fan Hub</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #ecf0f1;
+        }
+
+        body {
+            margin: 10;
+            padding: 0;
+            min-height: 100vh;
+            background: url('mac-larens.avif') center/cover no-repeat fixed;
+            font-family: 'Arial', sans-serif;
+            color: var(--text-color);
+            
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            z-index: 2;
+            margin-top: 80px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            transform-style: preserve-3d;
+            animation: rotate 60s infinite linear;
+        }
+
+        .carousel:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-item {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+            transform: translateZ(350px) !important;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+
+        .carousel-item:hover img {
+            filter: blur(5px);
+        }
+
+        .carousel-item .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: all 0.3s;
+            width: 100%;
+            padding: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .carousel-item:hover .content {
+            opacity: 1;
+        }
+
+        @keyframes rotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+        }
+
+        .dark-mode {
+            --primary-color: #1a1a1a;
+            --accent-color: #ff4757;
+            --text-color: #ffffff;
+        }
+
+        .bermuda-triangle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(45deg, #000033, #000066);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 1.2em;
+        text-align: center;
+        cursor: pointer;
+        z-index: 3;
+        transition: opacity 0.3s ease;
+        animation: rotateSphere 8s infinite linear;
+        }
+
+        @keyframes rotateSphere {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+                background: linear-gradient(45deg, #000033, #000066);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+                background: linear-gradient(225deg, #000033, #000066);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg) scale(1);
+                background: linear-gradient(45deg, #000033, #000066);
+            }
+        }
+
+        .bermuda-text {
+            animation: counterRotate 8s infinite linear;
+        }
+
+        @keyframes counterRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+
+        .carousel {
+            gap: 200px;
+            transform-style: preserve-3d;
+        }
+
+        .carousel > * {
+            transform: translateZ(100px);
+        }
+
+        .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(350px) !important; }
+        .carousel-item:nth-child(2) { transform: rotateY(51.4deg) translateZ(350px) !important; }
+        .carousel-item:nth-child(3) { transform: rotateY(102.8deg) translateZ(350px) !important; }
+        .carousel-item:nth-child(4) { transform: rotateY(154.2deg) translateZ(350px) !important; }
+        .carousel-item:nth-child(5) { transform: rotateY(205.6deg) translateZ(350px) !important; }
+        .carousel-item:nth-child(6) { transform: rotateY(257deg) translateZ(350px) !important; }
+        .carousel-item:nth-child(7) { transform: rotateY(308.4deg) translateZ(350px) !important; }
+
+        .message-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            z-index: 4;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .mabel-text {
+            color: #e74c3c;
+            font-style: italic;
+            font-weight: bold;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .dark-mode .carousel-item {
+        background: rgba(0, 0, 0, 0.8);
+        }
+
+        .dark-mode .carousel-item .content {
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffffff;
+        }
+
+        .dark-mode .carousel-item h2,
+        .dark-mode .carousel-item p {
+            color: #ffffff;
+        }
+
+        .dark-mode .theme-switch {
+            background: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        .dark-mode .bermuda-triangle {
+            background: linear-gradient(45deg, #000033, #000066);
+        }
+
+        .dark-mode .overlay {
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .tantrum-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #93C572;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .tantrum-button:hover {
+            background-color: #7BA05B;
+        }
+
+        .tantrum-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            display: none;
+            z-index: 6;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes vibrate {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-5px, -5px); }
+            50% { transform: translate(5px, 5px); }
+            75% { transform: translate(-5px, 5px); }
+            100% { transform: translate(5px, -5px); }
+        }
+    </style>
+</head>
+
+<body>    
+    <div class="overlay"></div>
+    
+    <button class="theme-switch" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <button class="tantrum-button" onclick="triggerTantrum()">TANTRUM</button>
+
+    <div class="carousel-container">
+        <div class="carousel">
+
+            <a href="profiles.html" class="carousel-item" style="transform: rotateY(51.4deg) translateZ(400px);">
+                <img src="profiles-main.jpg" alt="Character Profiles">
+                <div class="content">
+                    <h2>Character Profiles</h2>
+                    <p>Meet the Gang!</p>
+                </div>
+            </a>
+
+            <a href="playbook.html" class="carousel-item" style="transform: rotateY(102.8deg) translateZ(400px);">
+                <img src="playbook-main.avif" alt="The Playbook">
+                <div class="content">
+                    <h2>The Playbook</h2>
+                    <p>Barney's Guide to Success</p>
+                </div>
+            </a>
+
+            <a href="sparkles.html" class="carousel-item" style="transform: rotateY(154.2deg) translateZ(400px);">
+                <img src="Robin Sparkles-main.jpeg" alt="Robin Sparkles">
+                <div class="content">
+                    <h2>Robin Sparkles</h2>
+                    <p>Let's Go to the Mall!</p>
+                </div>
+            </a>
+
+            <a href="legendary-challenge.html" class="carousel-item" style="transform: rotateY(205.6deg) translateZ(400px);">
+                <img src="lengen-quiz-main.gif" alt="Legendary Challenge">
+                <div class="content">
+                    <h2>Legendary Challenge</h2>
+                    <p>Test Your HIMYM Knowledge</p>
+                </div>
+            </a>
+
+            <a href="destiny.html" class="carousel-item" style="transform: rotateY(257deg) translateZ(400px);">
+                <img src="destiny-main.jpg" alt="Ted's Destiny Tracker">
+                <div class="content">
+                    <h2>Ted's Destiny Tracker</h2>
+                    <p>Find Your Yellow Umbrella</p>
+                </div>
+            </a>
+
+            <a href="bro-code.html" class="carousel-item" style="transform: rotateY(308.4deg) translateZ(400px);">
+                <img src="bro-code-main.png" alt="The Bro Code">
+                <div class="content">
+                    <h2>The Bro Code</h2>
+                    <p>Article 1: Bros Before...</p>
+                </div>
+            </a>
+            <a href="change-ending.html" class="carousel-item" style="transform: rotateY(360deg) translateZ(400px);">
+                <img src="change-ending-main.jpg" alt="Alternate Ending">
+                <div class="content">
+                    <h2>Change The Ending</h2>
+                    <p>The Way It Should Have Been</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        const carousel = document.querySelector('.carousel');
+        let isDragging = false;
+        let startPosition = 0;
+        let currentRotation = 0;
+
+        document.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startPosition = e.clientX;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const delta = e.clientX - startPosition;
+            const rotationSpeed = 0.5;
+            const newRotation = currentRotation + (delta * rotationSpeed);
+            
+            carousel.style.transform = `rotateY(${newRotation}deg)`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            currentRotation = parseFloat(carousel.style.transform.replace('rotateY(', '').replace('deg)', ''));
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth/2) * 0.05;
+            const moveY = (e.clientY - window.innerHeight/2) * 0.05;
+            document.body.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+        });
+    </script>
+</body>
+</html>
+
+<div class="bermuda-triangle">
+    <span class="bermuda-text"></span>
+</div>
+<div class="message-popup">
+    You have just encountered the BERMUDA TRIANGLE, the place where if you put something you want to get rid of, it would be gone by the time you turn around... 
+    <br><br>
+    <span class="mabel-text">*except that stubborn old barrel MABEL... she just keeps coming back like that annoying ex-girlfriend! Even the Bermuda Triangle can't handle her tantrums! *</span>
+</div>
+
+<script>
+    const triangle = document.querySelector('.bermuda-triangle');
+    const popup = document.querySelector('.message-popup');
+
+    triangle.addEventListener('mouseenter', () => {
+        triangle.style.opacity = '0';
+        popup.style.display = 'block';
+        
+        document.body.style.animation = 'swirl 5s infinite linear';
+    });
+
+    popup.addEventListener('mouseleave', () => {
+        triangle.style.opacity = '1';
+        popup.style.display = 'none';
+        document.body.style.animation = 'none';
+    });
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes swirl {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
+<script>
+function triggerTantrum() {
+document.body.style.animation = 'vibrate 0.1s infinite';
+setTimeout(() => {
+    document.body.style.animation = 'none';
+}, 1000);
+
+const tantrumPopup = document.createElement('div');
+tantrumPopup.classList.add('tantrum-popup');
+tantrumPopup.textContent = 'TANTRUM!';
+document.body.appendChild(tantrumPopup);
+
+setTimeout(() => {
+    tantrumPopup.remove();
+}, 2000);
+}
+</script>

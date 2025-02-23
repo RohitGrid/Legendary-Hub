@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="styles-register.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <form id="registerForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="favoriteCharacter">Favorite Character:</label>
+        <select id="favoriteCharacter" name="favoriteCharacter" required>
+          <option value="">Select</option>
+          <option value="Ted Mosby">Ted Mosby</option>
+          <option value="Barney Stinson">Barney Stinson</option>
+          <option value="Robin Scherbatsky">Robin Scherbatsky</option>
+          <option value="Lily Aldrin">Lily Aldrin</option>
+          <option value="Marshall Eriksen">Marshall Eriksen</option>
+        </select>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <h2>Is this your favorite character?</h2>
+        <div class="image-container">
+          <img id="image1" src="" alt="Character 1" />
+          <img id="image2" src="" alt="Character 2" />
+        </div>
+      </div>
+    </div>
+
+    <script src="script-login.js"></script>
+  </body>
+</html>

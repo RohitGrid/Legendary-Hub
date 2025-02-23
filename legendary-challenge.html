@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legendary Challenge Mode - HIMYM Quiz</title>
+  <link rel="stylesheet" href="style-legendary-challenge.css">
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='home.html'">&#8592; Back</button>
+  <div class="quiz-container">
+    <h1>Legendary Challenge Mode</h1>
+    <div class="progress">Question <span id="current-question">1</span>/<span id="total-questions">10</span></div>
+    <div class="question-container">
+      <h2 id="question">What is Barney's job?</h2>
+      <div class="options">
+        <button class="option" data-correct="true">P.L.E.A.S.E. (Provide Legal Exculpation And Sign Everything)</button>
+        <button class="option" data-correct="false">Architect</button>
+        <button class="option" data-correct="false">Doctor</button>
+        <button class="option" data-correct="false">Teacher</button>
+      </div>
+    </div>
+    <div class="popup" id="correct-popup">1 NEH - 2 Bro Points Earned!</div>
+    <div class="popup" id="wrong-popup">It's Okay - BRO-FIVE!</div>
+  </div>
+  <script src="script-legendary-challenege.js"></script>
+</body>
+</html>

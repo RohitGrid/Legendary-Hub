@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the Ending - How I Met Your Mother</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        /* Container for the Story */
+        .story-container {
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            margin-top: 0px;
+            margin-bottom: 10px; /* Increased margin at the top */
+        }
+
+        /* Story Text */
+        .story-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Animated Characters */
+        .character {
+            display: inline-block;
+            margin: 10px;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .character img {
+            width: 100px; /* Fixed width */
+            height: 100px; /* Fixed height */
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover; /* Ensures images maintain aspect ratio */
+        }
+
+        /* Keyframes for Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Buttons */
+        .button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff3b2f;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 30px; /* Added space before the footer */
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='home.html'">&#8592; Back</button>
+
+    <div class="story-container">
+        <h1>Change the Ending</h1>
+        <div class="story-text">
+            <p>Once upon a time, in the magical land of New York City, there lived a group of friends who were terrible at making life decisions. Ted kept chasing the wrong girls, Barney kept lying to everyone, and Robin... well, Robin just kept being Canadian.</p>
+            <p>But what if we could rewrite their story? What if we could give them the ending they truly deserved? Here's how it should have gone:</p>
+        </div>
+
+        <div class="character">
+            <img src="barney.png" alt="Barney">
+            <p>Barney</p>
+        </div>
+        <div class="character">
+            <img src="nora.png" alt="Nora">
+            <p>Nora</p>
+        </div>
+        <div class="character">
+            <img src="robin.png" alt="Robin">
+            <p>Robin</p>
+        </div>
+        <div class="character">
+            <img src="don.png" alt="Don">
+            <p>Don</p>
+        </div>
+        <div class="character">
+            <img src="ted.png" alt="Ted">
+            <p>Ted</p>
+        </div>
+        <div class="character">
+            <img src="tracy.png" alt="Tracy">
+            <p>Tracy</p>
+        </div>
+
+        <div class="story-text">
+            <p>Barney and Nora finally got their act together. After burning the Playbook (literally), Barney realized that love isn't a game. Nora forgave him, and they lived happily ever after, raising a family of tiny suit-wearing mini-Barneys.</p>
+            <p>Robin and Don rekindled their romance. Don moved back to New York, and they became the ultimate power couple, hosting a late-night news show together. Robin even learned to love hockey (okay, maybe not).</p>
+            <p>And Ted? Ted met Tracy at that train station, just like in the original story. But this time, they lived a long, happy life together. No sad endings, no dying—just love, laughter, and a lifetime of yellow umbrellas.</p>
+            <p>Because sometimes, the best endings are the ones where everyone gets to be happy.</p>
+        </div>
+
+        <button class="button" onclick="alert('And they all lived happily ever after! 🎉')">Click for a Happy Ending</button>
+    </div>
+
+    <div class="footer">
+        <p>Made with ❤️ by HIMYM fans who just wanted a better ending.</p>
+    </div>
+</body>
+</html>

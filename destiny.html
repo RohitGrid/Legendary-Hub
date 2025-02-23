@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How I Met Your Mother Quiz</title>
+    <link rel="stylesheet" href="styles-destiny.css" />
+  </head>
+  <body>
+
+    <button class="back-button" onclick="window.location.href='home.html'">&#8592; Back</button>
+
+    <div class="container">
+      <h1>How I Met Your Mother Quiz</h1>
+      <p>Find out who your soulmate is and what your ideal career is!</p>
+
+      <div id="quiz">
+        <div class="question" id="question1">
+          <h2>Question 1: What’s your ideal Friday night?</h2>
+          <button onclick="answerQuestion(1, 'Ted')">
+            A quiet night with a book or movie
+          </button>
+          <button onclick="answerQuestion(1, 'Barney')">
+            Partying at the hottest club in town
+          </button>
+          <button onclick="answerQuestion(1, 'Robin')">
+            Watching sports or practicing archery
+          </button>
+          <button onclick="answerQuestion(1, 'Lily')">
+            Spending time with close friends
+          </button>
+          <button onclick="answerQuestion(1, 'Marshall')">
+            Playing board games or solving puzzles
+          </button>
+        </div>
+
+        <div class="question hidden" id="question2">
+          <h2>Question 2: What’s your dream job?</h2>
+          <button onclick="answerQuestion(2, 'Ted')">Architect</button>
+          <button onclick="answerQuestion(2, 'Barney')">
+            CEO of a multinational corporation
+          </button>
+          <button onclick="answerQuestion(2, 'Robin')">News Anchor</button>
+          <button onclick="answerQuestion(2, 'Lily')">
+            Kindergarten Teacher
+          </button>
+          <button onclick="answerQuestion(2, 'Marshall')">
+            Environmental Lawyer
+          </button>
+        </div>
+
+        <div class="question hidden" id="question3">
+          <h2>Question 3: What’s your favorite drink?</h2>
+          <button onclick="answerQuestion(3, 'Ted')">Scotch</button>
+          <button onclick="answerQuestion(3, 'Barney')">
+            Scotch, scotch, scotch
+          </button>
+          <button onclick="answerQuestion(3, 'Robin')">Whiskey</button>
+          <button onclick="answerQuestion(3, 'Lily')">Wine</button>
+          <button onclick="answerQuestion(3, 'Marshall')">Beer</button>
+        </div>
+
+        <div class="question hidden" id="question4">
+          <h2>Question 4: What’s your relationship style?</h2>
+          <button onclick="answerQuestion(4, 'Ted')">Hopeless romantic</button>
+          <button onclick="answerQuestion(4, 'Barney')">
+            Playful and adventurous
+          </button>
+          <button onclick="answerQuestion(4, 'Robin')">
+            Independent and strong
+          </button>
+          <button onclick="answerQuestion(4, 'Lily')">
+            Supportive and caring
+          </button>
+          <button onclick="answerQuestion(4, 'Marshall')">
+            Loyal and committed
+          </button>
+        </div>
+      </div>
+      <div id="results" class="hidden">
+        <h2>Your Results</h2>
+        <p>Your soulmate is: <span id="soulmate"></span></p>
+        <p>Your ideal career is: <span id="career"></span></p>
+        <img id="resultImage" src="" alt="Soulmate Image" />
+        <button onclick="resetQuiz()">Take the Quiz Again</button>
+      </div>
+    </div>
+
+    <script src="script-destiny.js"></script>
+  </body>
+</html>
